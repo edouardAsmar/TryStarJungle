@@ -1,12 +1,36 @@
-<div>
-	<div class = "header"> 
-		<button> Available Money </button> 
-		<button> Saving goals </button>
-		<button> Parent portal </button>
+<md-content>
+	<md-subheader>
+		<span class = "left">
+			<span> Welcome little {{childHome.user.firstName}}!</span>
+			<md-button> You have {{childHome.money}} <md-icon class="material-icons">stars</md-icon> </md-button>
+			<span> Joke of the Day: {{main.jokeOfTheDay}} </span>
+			<md-button ng-click="main.toggleAnswer()" ng-show="!main.showAnswer"> Find out! </md-button>
+			<span ng-show="main.showAnswer">{{main.answer}} </span>
+			<md-button ng-click="main.toggleAnswer()" ng-show="main.showAnswer"> Hide. </md-button>
+			<span flex> </span>
+		</span>
+		<span class = "right">
+			<md-button>Savings Goals</md-button>
+		</span>
+	</md-subheader>
+	<div class='md-padding' layout="row" layout-wrap>
+		<md-card flex="2" ng-repeat="company in childHome.companiesArray">
+		  <md-card-header>
+		    <md-card-header-text>
+		      <span class="md-title">{{company.name}}</span>
+		      <span class="md-subhead">{{company.category}}</span>
+		    </md-card-header-text>
+		  </md-card-header>
+		  <img ng-src="{{company.image}}" class="md-card-image company-image"/>
+		  <md-card-actions layout="row" layout-align="center">
+		    <md-button>Shop now!</md-button>
+		  </md-card-actions>
+		  <md-card-content>
+		    <p>
+		     {{company.description}}
+		    </p>
+		  </md-card-content>
+		</md-card>
 	</div>
 
-	<div class="child-content">
-		Companies
-	</div>
-
-</div>
+</md-content>

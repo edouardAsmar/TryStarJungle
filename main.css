@@ -1,8 +1,24 @@
-.header {
+/*.header {
 	text-align: center;
 	border: solid black;
 }
 
 .child-content {
 	text-align: center;
+}*/
+
+.left {
+	width : 85%;
+	display: inline-block;
+}
+
+.right {
+	display: inline-block;
+	text-align: right;
+}
+
+.company-image {
+	width: 300px;
+	height: 100px;
+	margin-left: 50px;
 }
